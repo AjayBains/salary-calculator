@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffer slary calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+        *{
+            margin-bottom:0.4rem;
+        }
+        .instruction{
+            text-align: center;
+            font-size:4rem;
+            background:lightpink;
+        }
+        .salary__calculation{
+            font-family: 'Dancing Script', cursive;
+            font-size:4.2rem;
+        }  
+        .modal{
+            margin:auto;
+            background-color: lightgray;
+            opacity:0;
+            width:0;
+            height:0;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            overflow:scroll;
+            transition:all,1s;
+            z-index:10;
+        }     
+        .modal__search{
+            width:100%;
+            height:4rem;
+            font-size:2.2rem;
+            background-color: lightskyblue;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity:0;
+            width: 0;            
+            background-color: rgba(0, 0, 0, 0.6);
+            /* backdrop-filter: blur(1px); */
+            z-index: 5;
+}
+       ul{
+           list-style:none;
+       }
+       li{
+           font-size:2.3rem;
+           line-height:5.2rem;
+           transition: all .2s;
+       }
+       li:hover{
+           font-size:2.9rem;
+           font-weight:600;
+       }
+       .position{
+           background-color: lightsteelblue;
+       }
+       .show{
+           opacity: 1;
+           width:60%;
+           height:400px;
+       }
+       .visible{
+           opacity: 1;
+           width:100%;
+           height:100%;
+
+       }
+
+       .costOfLiving{
+            background-color: lightsteelblue; 
+
+       }
+
+       .refresh{
+            /* background-color: lightsteelblue;            */
+           font-size:2rem;
+       }
+
+       .salary__display{
+           text-align: center;
+           font-size: 2rem;
+       }
+       .finalSalary {
+          height:auto;
+        
+       }
+       .finalSalary p{
+           width:100%;
+       }
+       .salary__calculated,
+       .salary__awarded{
+           font-weight:700;
+       }
+
+    </style>
+    <script src="https://kit.fontawesome.com/bfa52c41e2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <p class="instruction">Please select the position and cost of living of your area  below(lightblue background)</p>
+
+    <p class="salary__calculation">I'm a <span class="position"></span> living in a city with an <span class="costOfLiving"></span> <i class="fas fa-sync refresh"></i> cost of living. </p>
+
+    <div class="modal">
+        <input type="text" class="modal__search" placeholder="search">
+        <ul class="modal__list"></ul>
+           
+    </div>
+
+    <div class="overlay">
+
+    </div>
+
+    <div class="salary__display">
+        <div class="baseSalary">
+           <p>The base salary is :  <span class="salary__calculated"></span>
+</p> 
+        </div>
+        <div class="finalSalary">
+            <p>The final salary awared based on cost of living bands low(75%), Average(85%), intermediate(90%), high(100%) is <span class="salary__awarded"></span></p>
+        </div>
+        
+
+    </div>
+
+
+    <script src="./index.js" type="module"></script>
+
+    
+</body>
+</html>
+
+
+
+
